@@ -17,20 +17,12 @@
           "envVariables": {
             "ADMIN_PASSWORD": "{{env.ADMIN_PASS}}"
           },
-          "initialDelaySeconds": 10,
-          "volumeMounts": {
-            "/wiz/storage": "wiz-cfs"
-          }
+          "initialDelaySeconds": 10
         }
       }
     },
     "requirement": {
-      "addons": [
-        {
-          "type": "CFS",
-          "name": "wiz-cfs"
-        }
-      ],
+      "addons": [],
       "environment": {
         "ADMIN_USER": {
           "description": "用户账号",
