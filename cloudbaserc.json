@@ -1,0 +1,48 @@
+{
+  "version": "2.0",
+  "envId": "{{env.ENV_ID}}",
+  "framework": {
+    "name": "Wiznote",
+    "plugins": {
+      "client": {
+        "use": "@cloudbase/framework-plugin-container",
+        "inputs": {
+          "serviceName": "wiznote",
+          "servicePath": "/",
+          "uploadType": "image",
+          "imageInfo": {
+            "imageUrl": "ccr.ccs.tencentyun.com/tcbimages/wiznote-tcb:1.0.25"
+          },
+          "containerPort": 80,
+          "envVariables": {},
+          "initialDelaySeconds": 10,
+          "volumeMounts": {
+            "/wiz/storage": "wiz-cfs"
+          }
+        }
+      }
+    },
+    "requirement": {
+      "addons": [
+        {
+          "type": "CFS",
+          "name": "wiz-cfs"
+        }
+      ],
+      "environment": {
+        "ADMIN_USER": {
+          "description": "用户账号",
+          "required": true,
+          "disabled": true,
+          "default": "admin@wiz.cn"
+        },
+        "ADMIN_PASS": {
+          "description": "用户密码",
+          "required": true,
+          "disabled": true,
+          "default": "123456"
+        }
+      }
+    }
+  }
+}
