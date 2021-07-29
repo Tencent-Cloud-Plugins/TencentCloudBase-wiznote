@@ -14,7 +14,9 @@
             "imageUrl": "ccr.ccs.tencentyun.com/tcbimages/wiznote-tcb:1.0.25"
           },
           "containerPort": 80,
-          "envVariables": {},
+          "envVariables": {
+            "ADMIN_PASSWORD": "{{env.ADMIN_PASS}}"
+          },
           "initialDelaySeconds": 10,
           "volumeMounts": {
             "/wiz/storage": "wiz-cfs"
@@ -39,8 +41,7 @@
         "ADMIN_PASS": {
           "description": "用户密码",
           "required": true,
-          "disabled": true,
-          "default": "123456"
+          "default": "admin@123"
         }
       }
     }
