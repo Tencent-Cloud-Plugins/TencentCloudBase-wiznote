@@ -8,6 +8,8 @@
         "use": "@cloudbase/framework-plugin-container",
         "inputs": {
           "serviceName": "wiznote",
+          "cpu": 4,
+          "mem": 8,
           "servicePath": "/",
           "uploadType": "image",
           "imageInfo": {
